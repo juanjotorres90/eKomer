@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-danger pl-5">
+  <a class="navbar-brand" href="#">{{ 'Atrápalo' | uppercase }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/products">Products <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/shopping-list">Shopping list</a>
+      </li>
+
+
+    </ul>
+    <ul class="navbar-nav ml-auto mr-5 pr-5">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Carrito
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item p-1 px-3" (click)="onSaveData()">Item 1</a>
+          <a class="dropdown-item p-1 px-3" (click)="onFetchData()">Item 2</a>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
