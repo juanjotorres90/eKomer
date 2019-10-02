@@ -1,6 +1,9 @@
 .dropdown {
   cursor: pointer;
 }
-// .dropdown-menu {
-//   left: -50%;
-// }
+.dropdown-menu {
+  padding: 0;
+}
+svg {
+  transition: all .5s ease-in;
+}

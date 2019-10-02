@@ -9,32 +9,49 @@ import { DataStorageService } from 'src/app/services/data-storage.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  @Input()  product: Product;
+  @Input() product: Product;
   @Input() index: number;
 
-count:number = 1;
+  count = 1;
 
-  constructor(private dSService: DataStorageService) { }
+  constructor(private dSService: DataStorageService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
-
+  counterInput(flag) {
+    if (flag === 'increment') {
+      this.count++;
+    }
+    if (flag === 'decrement') {
+      this.count--;
+    }
   }
 
-    counterInput(flag){
+  addToCart(producto) {
+    producto.counter += this.count;
+    const ids = this.dSService.addedProducts.map(idProduct => idProduct.id);
 
-      if(flag==='increment'){
-        this.count++;
-      }
-      if(flag==='decrement'){
-        this.count--;
-      }
-    }
-
-
-    addToCart(producto) {
-      producto.counter = this.count;
+    if (!ids.includes(producto.id)) {
       this.dSService.addedProducts.push(producto);
       console.log(this.dSService.addedProducts);
-    } 
+    }
+  }
+  addToCartOffer2(producto) {
+    producto.counter += 2;
+    const ids = this.dSService.addedProducts.map(idProduct => idProduct.id);
+
+    if (!ids.includes(producto.id)) {
+      this.dSService.addedProducts.push(producto);
+      console.log(this.dSService.addedProducts);
+    }
+  }
+  addToCartOffer3(producto) {
+    producto.counter += 3;
+    const ids = this.dSService.addedProducts.map(idProduct => idProduct.id);
+
+    if (!ids.includes(producto.id)) {
+      this.dSService.addedProducts.push(producto);
+      console.log(this.dSService.addedProducts);
+    }
+  }
 }

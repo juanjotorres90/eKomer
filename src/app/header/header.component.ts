@@ -15,9 +15,8 @@ export class HeaderComponent implements OnInit, DoCheck {
 
     this.aPLength = this.dSService.addedProducts.length;
   }
- 
+
   ngDoCheck() {
     this.aPLength = this.dSService.addedProducts.length;
-
   }
 }

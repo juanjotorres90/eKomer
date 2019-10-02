@@ -1,57 +1,56 @@
-
-
-<a class="list-group-item list-group-item-action clearfix badge-light mb-5"
-  routerLinkActive="active">
+<a class="list-group-item list-group-item-action clearfix badge-light mb-5" routerLinkActive="active">
   <div class="row">
 
 
-  <div class="col-4">
-    <h4 class="">{{ product.name }}</h4>
-    <span class="">
+    <div class="col-4">
+      <h4 class="">{{ product.name }}</h4>
+      <span class="">
         <img [src]="product.imagePath" alt="{{ product.name }}" class="img-fluid rounded" style="max-height: 60px;">
       </span>
-  </div>
+    </div>
 
-<div class="col-4 d-flex flex-column justify-content-center align-items-center">
-    <table>
+    <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+      <table>
         <tr>
           <td>
-            <button type="button" mat-raised-button (click)="counterInput('increment')">+
-          </button>
+            <button type="button" mat-raised-button (click)="counterInput('increment')" class="rounded-circle"
+              color="primary">+
+            </button>
           </td>
           <td class="center-input">
-            <input matInput name="counter" type="text" size="3" min="1" [(ngModel)]="count" required class="text-center">
-         </td>
+            &nbsp;<input matInput name="counter" type="text" size="2" min="1" [(ngModel)]="count" required
+              class="text-center rounded">&nbsp;
+          </td>
           <td>
-            <button type="button" mat-raised-button (click)="counterInput('decrement')" [disabled]="count < 2">-
+            <button type="button" mat-raised-button (click)="counterInput('decrement')" [disabled]="count < 2"
+              class="rounded-circle minus" color="primary">-
             </button>
           </td>
         </tr>
       </table>
-    <button type="button" class="btn btn-warning mt-3" (click)="addToCart(product)">Add to Cart</button>
-</div>
+      <button type="button" class="btn btn-warning mt-3" (click)="addToCart(product)">Add to Cart</button>
+    </div>
 
 
-  <div class="col-4  d-flex flex-column justify-content-center align-items-center">
-  
-      <p class="">{{ product.price }} €</p>
-  <button mat-raised-button color="accent"
-  [mdePopoverTriggerFor]="appPopover"
-  mdePopoverTriggerOn="click" #popoverTrigger="mdePopoverTrigger">
-  Special Offer
-</button>
+    <div class="col-4  d-flex flex-column justify-content-center align-items-center">
 
-<mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
-  <mat-card style="max-width: 300px">
-    <mat-card-content>
-<p>{{ product.offer }}</p>
-<button type="button" class="btn btn-warning">Add to Cart now!</button>
-    </mat-card-content>
-  </mat-card>
-</mde-popover>
+      <p class="">{{ product.price | number:'1.2' }} €</p>
+      <button mat-raised-button color="accent" [mdePopoverTriggerFor]="appPopover" mdePopoverTriggerOn="click"
+        #popoverTrigger="mdePopoverTrigger">
+        Special Offer
+      </button>
+
+      <mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+        <mat-card style="max-width: 300px">
+          <mat-card-content>
+            <p>{{ product.offer.slice(0, 1) }}</p>
+            <button *ngIf="product.id === 'GR1'" type="button" class="btn btn-warning" (click)="addToCartOffer2(product)">Add to Cart now!</button>
+            <button *ngIf="product.id === 'SR1' || product.id === 'CF1'" type="button" class="btn btn-warning" (click)="addToCartOffer3(product)">Add to Cart now!</button>
+          </mat-card-content>
+        </mat-card>
+      </mde-popover>
+    </div>
+
+
   </div>
-
-
-</div>
 </a>
-

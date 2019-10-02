@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-info pl-5 mb-5">
-  <a class="navbar-brand" href="#">{{ 'Interview 1' | uppercase }}</a>
+  <a class="navbar-brand" href="#">eKomer</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,10 +22,10 @@
           aria-haspopup="true" aria-expanded="false">
 
 
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="30px" viewBox="0 0 446.853 446.853"
-          xml:space="preserve" fill="#fff">
-         <path d="M444.274,93.36c-2.558-3.666-6.674-5.932-11.145-6.123L155.942,75.289c-7.953-0.348-14.599,5.792-14.939,13.708
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" width="30px" viewBox="0 0 446.853 446.853" xml:space="preserve"
+            [ngStyle]="{ 'fill' : aPLength>0 ? 'lightgreen' : '#fff'}">
+            <path d="M444.274,93.36c-2.558-3.666-6.674-5.932-11.145-6.123L155.942,75.289c-7.953-0.348-14.599,5.792-14.939,13.708
            c-0.338,7.913,5.792,14.599,13.707,14.939l258.421,11.14L362.32,273.61H136.205L95.354,51.179
            c-0.898-4.875-4.245-8.942-8.861-10.753L19.586,14.141c-7.374-2.887-15.695,0.735-18.591,8.1c-2.891,7.369,0.73,15.695,8.1,18.591
            l59.491,23.371l41.572,226.335c1.253,6.804,7.183,11.746,14.104,11.746h6.896l-15.747,43.74c-1.318,3.664-0.775,7.733,1.468,10.916
@@ -36,14 +36,14 @@
            c6.235,0,11.752-4.028,13.651-9.96l59.739-186.387C447.536,101.679,446.832,97.028,444.274,93.36z M169.664,409.814
            c-10.543,0-19.117-8.573-19.117-19.116s8.574-19.117,19.117-19.117s19.116,8.574,19.116,19.117S180.207,409.814,169.664,409.814z
             M327.373,409.814c-10.543,0-19.116-8.573-19.116-19.116s8.573-19.117,19.116-19.117s19.116,8.574,19.116,19.117
-           S337.916,409.814,327.373,409.814z"/>
-       </svg>
+           S337.916,409.814,327.373,409.814z" />
+          </svg>
 
-<span *ngIf="aPLength">&nbsp;{{ aPLength }}</span>
+          <span *ngIf="aPLength">&nbsp;{{ aPLength }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="width: 420px;">
-         <app-basket></app-basket>
-         <a class="nav-link text-primary text-center" routerLink="/basket">View full shopping Cart</a>
+          <app-basket></app-basket>
+          <a class="nav-link text-primary text-center" routerLink="/basket">View full shopping Cart</a>
         </div>
       </li>
     </ul>
