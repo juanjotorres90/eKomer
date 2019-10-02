@@ -1,1 +1,12 @@
-<p>products works!</p>
+<div class="row mt-5">
+  <div class="col-sm-12">
+    <button class="btn btn-secondary">New Product</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    <app-product *ngFor="let product of products; let i = index" [product]="product" [index]="i"></app-product>
+  </div>
+
+</div>

@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatMenuModule } from '@angular/material';
 import { ProductsComponent } from './products/products.component';
 import { BasketComponent } from './basket/basket.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductsComponent,
-    BasketComponent
+    BasketComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
