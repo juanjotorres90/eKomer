@@ -1,10 +1,57 @@
-<a class="list-group-item list-group-item-action clearfix badge-light"
+
+
+<a class="list-group-item list-group-item-action clearfix badge-light mb-5"
   routerLinkActive="active">
-  <div class="float-left">
+  <div class="row">
+
+
+  <div class="col-4">
     <h4 class="">{{ product.name }}</h4>
-    <p class="">{{ product.price }} €</p>
+    <span class="">
+        <img [src]="product.imagePath" alt="{{ product.name }}" class="img-fluid rounded" style="max-height: 60px;">
+      </span>
   </div>
-  <span class="float-right">
-    <img [src]="product.imagePath" alt="{{ product.name }}" class="img-fluid rounded" style="max-height: 60px;">
-  </span>
+
+<div class="col-4 d-flex flex-column justify-content-center align-items-center">
+    <table>
+        <tr>
+          <td>
+            <button type="button" mat-raised-button (click)="counterInput('increment')">+
+          </button>
+          </td>
+          <td class="center-input">
+            <input matInput name="counter" type="text" size="3" min="1" [(ngModel)]="count" required class="text-center">
+         </td>
+          <td>
+            <button type="button" mat-raised-button (click)="counterInput('decrement')" [disabled]="count < 2">-
+            </button>
+          </td>
+        </tr>
+      </table>
+    <button type="button" class="btn btn-warning mt-3" (click)="addToCart(product)">Add to Cart</button>
+</div>
+
+
+  <div class="col-4  d-flex flex-column justify-content-center align-items-center">
+  
+      <p class="">{{ product.price }} €</p>
+  <button mat-raised-button color="accent"
+  [mdePopoverTriggerFor]="appPopover"
+  mdePopoverTriggerOn="click" #popoverTrigger="mdePopoverTrigger">
+  Special Offer
+</button>
+
+<mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card style="max-width: 300px">
+    <mat-card-content>
+<p>{{ product.offer }}</p>
+<button type="button" class="btn btn-warning">Add to Cart now!</button>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+  </div>
+
+
+</div>
 </a>
+

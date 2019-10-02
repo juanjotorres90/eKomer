@@ -1,1 +1,13 @@
-<p>basket works!</p>
+<div class="row">
+    <div class="col-12">
+      <ul class="list-group">
+        <a
+        class="list-group-item badge-light"
+        style="cursor: pointer"
+        *ngFor="let addedProduct of addedProducts; let i = index"
+     >{{ addedProduct.name }}
+          ({{ addedProduct.counter }}) {{ addedProduct.price *addedProduct.counter }} €</a>
+      </ul>
+    </div>
+  </div>
+  
