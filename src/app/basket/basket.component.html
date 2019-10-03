@@ -12,7 +12,7 @@
 
      <span class="text-center">{{ addedProduct.name }}</span>
 
-     <span class="text-right">{{ addedProduct.offerPrice | number:'1.2' }} €  &nbsp;<button type="button" class="btn btn-outline-danger" (click)="deleteProduct(i)">Delete</button></span>
+     <span class="text-right">{{ addedProduct.offerPrice | number:'1.2' }} €  &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-outline-danger" (click)="deleteProduct(addedProduct, i)">x</button></span>
 
 
           </a>

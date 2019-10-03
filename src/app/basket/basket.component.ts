@@ -55,10 +55,12 @@ export class BasketComponent implements OnInit, DoCheck {
     }
   }
 
-  deleteProduct(index) {
+  deleteProduct(producto, index) {
     this.addedProducts.splice(index, 1);
+    producto.counter = 0;
   }
   emptyCart(producto) {
+    this.addedProducts.map(product => product.counter = 0);
     this.addedProducts.splice(producto);
   }
 }
